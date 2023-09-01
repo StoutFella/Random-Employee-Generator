@@ -1,0 +1,10 @@
+                        ISSUES AND POSSIBLE SOLUTIONS
+
+1. [X] Save employee button is creating a long list of employees.
+
+A. [X] Limit the amount of employees created so users don't endlessly scroll.
+B. Create a "Go back to top" button at the bottom of the page. 
+C. [ ] Create a separate page to view the saved employees (this solutions creates
+more realestate for the Employee data list, grow the list to 10 data fields)
+D. Optional: Render only one employee. This way, I can create the (copy, delete, update, share
+buttons as a pop up options when a user press and hold the saved employee data)

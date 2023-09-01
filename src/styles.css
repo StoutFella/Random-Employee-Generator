@@ -1,0 +1,330 @@
+.icons {
+  width: 3em;
+}
+
+.App {
+  display: flex;
+  width: auto;
+  font-family: sans-serif;
+  text-align: start;
+  background: transparent;
+}
+
+body {
+  outline: 1px solid white;
+  border-radius: 0.4em;
+  background: rgb(105, 100, 120);
+}
+
+div {
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+span {
+  display: block;
+  background: white;
+  padding: 20px 50px;
+  border: 1px solid black;
+  margin: 5px;
+  color: red;
+}
+
+h1 {
+  color: bisque;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  font-size: 1.8em;
+}
+
+strong {
+  color: black;
+}
+
+small {
+  position: relative;
+  top: 2px;
+  color: black;
+}
+
+small > em {
+  color: rebeccapurple;
+  font-weight: bold;
+}
+
+h3 {
+  text-align: center;
+}
+
+p {
+  margin: 0;
+  padding: 5px 0px;
+  color: bisque;
+  transition: all ease 0.5s;
+}
+
+iframe {
+  background: transparent;
+  border: none;
+}
+
+button {
+  margin: 0 auto;
+  gap: 0.5em;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1rem;
+  background: white;
+  color: rgb(105, 100, 120);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all ease 0.5s;
+  box-shadow: inset 0em 0em 2em 0.1em rgba(105, 100, 120, 0.5);
+}
+
+button:active {
+  padding: 10px;
+  font-size: 1rem;
+  width: fit-content;
+  border: 1px solid white;
+  background: rgb(90, 85, 105);
+  color: white;
+  border-radius: 4px;
+  transition: all ease 0.5s;
+}
+
+hr {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1em;
+  height: 1px;
+  background-color: white;
+  border: none;
+}
+
+em {
+  color: bisque;
+}
+
+.description {
+  line-height: 1.4em;
+  font-weight: normal;
+  margin: 10px 5px;
+  padding: 0px 10px;
+  color: white;
+}
+
+.employees-data {
+  padding: 10px;
+}
+
+.employees-data > p {
+  cursor: pointer;
+}
+
+.saved-employees-title {
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  margin-bottom: 0.25em;
+  display: flex;
+  justify-content: center;
+}
+
+/* .save-employee-btn {
+} */
+
+.parent-wrapper {
+  display: grid;
+  grid-template-columns: auto auto /*auto*/;
+  width: 80vw;
+}
+
+.child-wrapper {
+  font-size: 0.9em;
+  outline: 1px solid black;
+  word-break: keep-all;
+  padding: 0px 0.5em;
+  margin: 0.3em;
+  border-radius: 0.4em;
+  max-width: 95%;
+  transition: all ease 0.5s;
+}
+
+.child-wrapper:hover {
+  outline: 1px solid white;
+  /* background: rgb(140, 133, 160); */
+  transition: all ease 0.5s;
+}
+
+.employees-data > p:active {
+  color: white;
+  background: rgba(255, 228, 196, 0.555);
+}
+
+.SavedEmployeeButtons > button {
+  margin-top: 0.25em;
+  color: black;
+}
+
+.SavedEmployeeButtons > button:hover {
+  background: bisque;
+  color: black;
+  font-size: 1.1em;
+}
+
+.SavedEmployeeButtons > button:active {
+  background: rgb(65, 45, 65);
+  color: rgb(230, 105, 125);
+}
+
+.SavedEmployeeButtons {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 0.25em;
+  width: 100%;
+}
+
+.SavedEmployeeButtons > button {
+  font-size: 0.85em;
+  width: 30%;
+  margin-top: 0.25em;
+}
+
+/*  MEDIA QUERY */
+
+@media screen and (max-width: 640px) {
+  strong {
+    color: rgb(230, 105, 125);
+  }
+
+  .SavedEmployeeButtons > button:hover {
+    background: rgb(130, 55, 85);
+    color: white;
+  }
+
+  .App {
+    background: rgb(65, 45, 65);
+    padding: 0.5rem;
+  }
+
+  body,
+  .child-wrapper {
+    background: rgb(130, 55, 85);
+    color: white;
+  }
+
+  .parent-wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+  }
+
+  .child-wrapper {
+    padding: 1em;
+    width: 70vw;
+  }
+
+  .child-wrapper:hover {
+    background: rgb(80, 35, 50);
+    transition: background ease 0.5s;
+  }
+
+  button {
+    color: pink;
+    background: rgb(230, 105, 125);
+  }
+
+  button:active {
+    color: rgb(130, 55, 85);
+    border: 1px solid white;
+    background: pink;
+  }
+
+  .employees-data > p:active {
+    color: rgb(230, 105, 125);
+    background: rgb(130, 55, 85);
+  }
+}
+
+/*  MEDIA QUERY */
+
+@media screen and (min-width: 1080px) {
+  strong {
+    color: rgb(230, 105, 125);
+  }
+
+  .SavedEmployeeButtons > button:hover {
+    color: white;
+  }
+
+  .App {
+    width: 100vw;
+    background: rgb(40, 40, 60);
+    padding: 0.5rem;
+  }
+
+  body {
+    background: red;
+    width: 100%;
+  }
+
+  body,
+  .child-wrapper {
+    background: rgb(80, 80, 120);
+    color: white;
+  }
+
+  .parent-wrapper {
+    grid-template-columns: auto auto auto;
+  }
+
+  .child-wrapper {
+    width: auto;
+    padding: 0.5em;
+  }
+
+  .child-wrapper:hover {
+    background: rgb(80, 80, 120);
+    transition: background ease 0.5s;
+  }
+
+  button {
+    color: pink;
+    background: rgb(230, 105, 125);
+  }
+
+  button:active {
+    color: rgb(130, 55, 85);
+    border: 1px solid white;
+    background: pink;
+  }
+
+  .employees-data > p:active {
+    color: rgb(230, 105, 125);
+    background: rgb(130, 55, 85);
+  }
+
+  .SavedEmployeeButtons > button:hover {
+    background: rgb(40, 40, 60);
+    color: pink;
+    font-size: 1.1em;
+  }
+
+  .SavedEmployeeButtons > button:active {
+    background: rgb(65, 45, 65);
+    color: rgb(230, 105, 125);
+  }
+}
+
+/*  MEDIA QUERY */
+
+#savedEmployees:hover {
+  /*
+  When a button is clicked, card rotates to show more employee data :
+  https://www.w3schools.com/howto/howto_css_flip_card.asp
+  */
+}
