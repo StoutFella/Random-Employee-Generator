@@ -2,24 +2,27 @@
   width: 3em;
 }
 
+b {
+  color: bisque;
+}
+
 .App {
   display: flex;
-  width: auto;
+  width: 100%;
   font-family: sans-serif;
   text-align: start;
-  background: transparent;
+  background: rgb(110, 100, 145);
 }
 
 body {
   outline: 1px solid white;
   border-radius: 0.4em;
-  background: rgb(105, 100, 120);
+  background: rgb(50, 45, 65);
 }
 
 div {
-  flex-direction: column;
-  flex-wrap: wrap;
   margin: 0 auto;
+  flex-direction: column;
 }
 
 span {
@@ -32,7 +35,7 @@ span {
 }
 
 h1 {
-  color: bisque;
+  color: rgb(50, 30, 50);
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 0.25em;
@@ -110,10 +113,11 @@ em {
 }
 
 .description {
+  text-align: start;
   line-height: 1.4em;
   font-weight: normal;
-  margin: 10px 5px;
-  padding: 0px 10px;
+  margin-top: 1em;
+  padding: 0px 0.6em;
   color: white;
 }
 
@@ -125,21 +129,24 @@ em {
   cursor: pointer;
 }
 
+.employees-data > p:hover {
+  font-size: 1.1em;
+}
+
 .saved-employees-title {
   margin: 0 auto;
   margin-top: 1.5rem;
-  margin-bottom: 0.25em;
+  margin-bottom: 1em;
   display: flex;
   justify-content: center;
 }
 
-/* .save-employee-btn {
-} */
-
 .parent-wrapper {
   display: grid;
   grid-template-columns: auto auto /*auto*/;
-  width: 80vw;
+  gap: 1.4em;
+  width: fit-content;
+  margin: 1em;
 }
 
 .child-wrapper {
@@ -147,10 +154,10 @@ em {
   outline: 1px solid black;
   word-break: keep-all;
   padding: 0px 0.5em;
-  margin: 0.3em;
+  width: 100%;
   border-radius: 0.4em;
-  max-width: 95%;
   transition: all ease 0.5s;
+  background: rgb(140, 133, 160);
 }
 
 .child-wrapper:hover {
@@ -161,7 +168,19 @@ em {
 
 .employees-data > p:active {
   color: white;
-  background: rgba(255, 228, 196, 0.555);
+}
+
+#general-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 3px dotted rgba(255, 255, 255, 0.25);
+  margin: 0;
+}
+
+#general-btns > button {
+  margin: 0.4em;
+  font-size: 1.05em;
 }
 
 .SavedEmployeeButtons > button {
@@ -193,83 +212,38 @@ em {
   width: 30%;
   margin-top: 0.25em;
 }
+/*---------------------  MEDIA QUERIES  -----------------------*/
 
-/*  MEDIA QUERY */
-
-@media screen and (max-width: 640px) {
-  strong {
-    color: rgb(230, 105, 125);
-  }
-
-  .SavedEmployeeButtons > button:hover {
-    background: rgb(130, 55, 85);
-    color: white;
-  }
-
-  .App {
-    background: rgb(65, 45, 65);
-    padding: 0.5rem;
-  }
-
-  body,
-  .child-wrapper {
-    background: rgb(130, 55, 85);
-    color: white;
-  }
-
-  .parent-wrapper {
-    display: grid;
-    grid-template-columns: auto;
-    width: 100%;
-  }
-
-  .child-wrapper {
-    padding: 1em;
-    width: 70vw;
-  }
-
-  .child-wrapper:hover {
-    background: rgb(80, 35, 50);
-    transition: background ease 0.5s;
-  }
-
-  button {
-    color: pink;
-    background: rgb(230, 105, 125);
-  }
-
-  button:active {
-    color: rgb(130, 55, 85);
-    border: 1px solid white;
-    background: pink;
-  }
-
-  .employees-data > p:active {
-    color: rgb(230, 105, 125);
-    background: rgb(130, 55, 85);
-  }
-}
-
-/*  MEDIA QUERY */
+/*  MEDIA QUERY BIG SCREEN*/
 
 @media screen and (min-width: 1080px) {
   strong {
     color: rgb(230, 105, 125);
   }
 
+  b {
+    color: rgb(230, 105, 125);
+  }
+
+  h1 {
+    color: bisque;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    font-size: 1.8em;
+  }
+
   .SavedEmployeeButtons > button:hover {
     color: white;
   }
 
   .App {
-    width: 100vw;
     background: rgb(40, 40, 60);
-    padding: 0.5rem;
+    width: 100%;
   }
 
   body {
     background: red;
-    width: 100%;
   }
 
   body,
@@ -279,12 +253,9 @@ em {
   }
 
   .parent-wrapper {
+    margin: 0 auto;
+    width: 90vw;
     grid-template-columns: auto auto auto;
-  }
-
-  .child-wrapper {
-    width: auto;
-    padding: 0.5em;
   }
 
   .child-wrapper:hover {
@@ -320,7 +291,73 @@ em {
   }
 }
 
-/*  MEDIA QUERY */
+/*  MEDIA QUERY - SMALL SCREEN*/
+
+@media screen and (max-width: 640px) {
+  strong {
+    color: rgb(230, 105, 125);
+  }
+
+  b {
+    color: rgb(230, 105, 125);
+  }
+
+  h1 {
+    color: rgb(230, 105, 125);
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    font-size: 1.8em;
+  }
+
+  .SavedEmployeeButtons > button:hover {
+    background: rgb(130, 55, 85);
+    color: white;
+  }
+
+  .App {
+    background: rgb(65, 45, 65);
+    width: 100%;
+  }
+
+  body,
+  .child-wrapper {
+    background: rgb(130, 55, 85);
+    color: white;
+  }
+
+  .parent-wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .child-wrapper {
+    width: 95%;
+  }
+
+  .child-wrapper:hover {
+    background: rgb(80, 35, 50);
+    transition: background ease 0.5s;
+  }
+
+  button {
+    color: pink;
+    background: rgb(230, 105, 125);
+  }
+
+  button:active {
+    color: rgb(130, 55, 85);
+    border: 1px solid white;
+    background: pink;
+  }
+
+  .employees-data > p:active {
+    color: rgb(230, 105, 125);
+    background: rgb(130, 55, 85);
+  }
+}
 
 #savedEmployees:hover {
   /*

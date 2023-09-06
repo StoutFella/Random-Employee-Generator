@@ -1,18 +1,23 @@
-// import waste from "./Assets/Icons/trash-can.gif";
+import React from "react";
+import { fadeOut } from "./GSAPAnimations";
 
-function SavedEmployeeButtons({ ...props }) {
+function SavedEmployeeButtons({ onDelete, fadeOut }) {
+  const handleDeleteClick = () => {
+    // Call the onDelete function passed from the parent component
+    onDelete();
+    // Call the animation functions as needed
+    const elementToAnimate = document.getElementById("employee-some-index"); // Replace with the appropriate element ID
+    if (elementToAnimate) {
+      fadeOut(elementToAnimate);
+    }
+  };
   return (
     <>
       <div className="SavedEmployeeButtons">
-        {/* <button>edit</button> */}
-        <button onClick={props.Delete} title="Delete employee">
-          {/* <img class="icons"
-            src={waste} 
-            alt="trash can icon"
-          /> */}
+        <button onClick={handleDeleteClick} title="Delete employee">
           Delete
         </button>
-        {/* {<button>copy</button>} */}
+        <button title="Edit employee">Edit</button>
       </div>
     </>
   );
