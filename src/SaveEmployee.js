@@ -1,108 +1,63 @@
-import React, { useEffect, useState } from "react";
+import { animations } from "./GSAPAnimations";
 import SavedEmployeeButtons from "./SavedEmployeeButtons";
 
-function SaveEmployee({ ...props }) {
-  const [employees, setEmployees] = useState([]);
+function SaveEmployee({ employees, updateEmployees }) {
+  const handleDelete = (index) => {
+    // Create a copy of the employees array and remove the item at the specified index
+    const updatedEmployees = [...employees];
+    updatedEmployees.splice(index, 1);
+    // Update the employees state using the updateEmployees function
+    updateEmployees(updatedEmployees);
 
-  const displayEmployee = () => {
-    if (employees.length < 10) {
-      setEmployees((current) => [...current, { ...props }]);
-      console.log("employee added");
+    // Log the number of employees saved
+    if (updatedEmployees.length === 0) {
+      console.log("# of employees:", 0);
     } else {
-      console.log("reached 10 employees limit");
-      return;
+      console.log("# of employees:", updatedEmployees.length);
     }
   };
 
-  const handleDelete = (event, index) => {
-    // Prevent event propagation to avoid unintended side effects
-    event.stopPropagation();
-
-    setEmployees((prevEmployees) => {
-      // Create a new array without the employee at the clicked index
-      const updatedEmployees = prevEmployees.filter((_, i) => i !== index);
-      return updatedEmployees;
-    });
-  };
-
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      // Your logic here to handle the key press event
-
-      if (event.key === "s" || event.key === "S") {
-        console.log(event.key);
-        // displayEmployee();
-      }
-
-      if (event.key === "e" || event.key === "E") {
-        console.log(event.key);
-        //Export generated employee data
-      }
-
-      // console.log("Key pressed:", event.key);
-    };
-
-    // Add the event listener
-    window.addEventListener("keydown", handleKeyPress);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("keydown", handleKeyPress);
-    };
-  }, []);
   return (
     <>
-      <div>
-        <button
-          className="save-employee-btn"
-          title="Save random employee data"
-          onClick={displayEmployee}
-        >
-          Save Employee
-          <small>
-            (or press <em>S</em>)
-          </small>
-        </button>
-      </div>
-      <h2
-        id="savedEmployee"
-        className="saved-employees-title"
-        title="saved employees (limit of 6)"
-      >
-        {/* Need to conditionally render the title below "Saved Employees". 
-         No need to show it if there is no data saved.*/}
-        {/* SAVED EMPLOYEES */}
-      </h2>
-
       {employees.length !== 0 ? (
-        <h1>Saved Employee{employees.length > 1 ? "s" : ""}</h1>
+        <h1
+          className="saved-employees-title"
+          title="saved employees (limit of 6)"
+        >
+          Saved Employee{employees.length > 1 ? "s" : ""}
+        </h1>
       ) : (
         ""
       )}
-      <div id="savedEmployees" className="parent-wrapper">
+      <div className="parent-wrapper">
         {employees.map((element, index) => {
           return (
-            <div className="child-wrapper" key={index} draggable="true">
+            <div
+              id={`employee-${index}`}
+              className="child-wrapper"
+              key={index}
+              draggable="true"
+            >
               <SavedEmployeeButtons
-                Delete={(event) => handleDelete(event, index)}
+                onDelete={() => handleDelete(index)}
+                animations={animations}
               />
               <p>
                 <strong>Name:</strong> {element.name}
-                <br></br>
+                <br />
                 <strong>Role:</strong> {element.role}
-                <br></br>
-                <strong>Salary:</strong>
-                {element.salary}
-                <br></br>
-                <strong>Years of Experience:</strong>
-                {element.yoe}
-                <br></br>
-                <strong>Favorite Office Supply:</strong>
+                <br />
+                <strong>Salary:</strong> {element.salary}
+                <br />
+                <strong>Work Model:</strong> {element.workModel}
+                <br />
+                <strong>Years of Experience:</strong> {element.yoe}
+                <br />
+                <strong>Favorite Office Supply:</strong>{" "}
                 {element.favoriteOfficeSupply}
-                <br></br>
-                <strong>Hobbies:</strong>
-                {element.hobbies}
-                <br></br>
+                <br />
+                <strong>Hobbies:</strong> {element.hobbies}
+                <br />
               </p>
             </div>
           );

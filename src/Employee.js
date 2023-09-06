@@ -1,8 +1,23 @@
+import { useState } from "react";
 import SaveEmployee from "./SaveEmployee";
 
 function Employee({ ...props }) {
-  // const spacedHobbies = props.split(',').join(', ');
-  // console.log("Console adds: ", { ...props });
+  const [employees, setEmployees] = useState([]);
+
+  // Define the updateEmployees function to update the employees state
+  const updateEmployees = (newEmployees) => {
+    setEmployees(newEmployees);
+  };
+
+  const displayEmployee = () => {
+    if (employees.length < 10) {
+      setEmployees((current) => [...current, { ...props }]);
+      console.log("# of employees:", employees.length + 1);
+    } else {
+      console.log("reached 10 employees limit");
+    }
+  };
+
   return (
     <>
       <div className="employees-data">
@@ -13,7 +28,10 @@ function Employee({ ...props }) {
           <strong>Role: </strong> {props.role}
         </p>
         <p title={props.salary} onClick={props.randomSalary}>
-          <strong>Salary:</strong>${props.salary}.00
+          <strong>Salary:</strong>${props.salary}
+        </p>
+        <p title={props.workModel} onClick={props.randomWorkModel}>
+          <strong>Work Model: </strong> {props.workModel}
         </p>
         <p title={props.yoe} onClick={props.randomYearsOfX}>
           <strong>Years of Experience: </strong>
@@ -29,15 +47,29 @@ function Employee({ ...props }) {
           <strong>Hobbies: </strong> {props.hobbies}
         </p>
 
+        <section id="general-btns">
+          <button title="Save Employee Data" onClick={displayEmployee}>
+            Save Employee
+          </button>
+
+          <button title="Randomize All Data" onClick={props.randomData}>
+            Randomizer
+          </button>
+        </section>
+
         {/* do conditional rendering of the below component (so it dont show up on page load) */}
         <SaveEmployee
           id={props.userId}
           name={props.name}
           role={props.role}
           salary={props.salary}
+          workModel={props.workModel}
           hobbies={props.hobbies}
           favoriteOfficeSupply={props.officeSupplyChoice}
           yoe={props.yoe}
+          randomData={props.randomData}
+          employees={employees}
+          updateEmployees={updateEmployees} // Pass the function as a prop
         />
       </div>
     </>
