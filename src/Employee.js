@@ -5,8 +5,9 @@ function Employee({ ...props }) {
   const [employees, setEmployees] = useState([]);
 
   // Define the updateEmployees function to update the employees state
-  const updateEmployees = (newEmployees) => {
-    setEmployees(newEmployees);
+  const updateEmployees = (employees) => {
+    console.log("delete");
+    setEmployees(employees);
   };
 
   const displayEmployee = () => {
@@ -68,7 +69,7 @@ function Employee({ ...props }) {
           favoriteOfficeSupply={props.officeSupplyChoice}
           yoe={props.yoe}
           randomData={props.randomData}
-          employees={employees}
+          employees={employees} // current emeployees to be passed as prop
           updateEmployees={updateEmployees} // Pass the function as a prop
         />
       </div>

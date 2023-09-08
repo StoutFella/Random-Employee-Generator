@@ -22,3 +22,12 @@ Update: 8/31/2023
 P.S. The delete button removes the saved employee as a whole and not specific fileds such as (name, role, salary...).
 
 2. Conditionally renderd the "Saved Employees" title below. If more than 1 employee saved, add "s" else not and if no employees.length === 0, then render nothing. Nice little touch =)
+
+
+Update: 9/07/2023
+
+1. Not sure if I should include the ***Edit*** button. It'll introduce state complexity and codebase is starting to give my eyes cancer. I think its a decent feature to have. For now, I'll shelf it as a nice to have feature.
+
+2. Updated a little bit of the CSS. That's where I go to cry in the corner after dealing with react states.
+
+3. I'll finish up the Edit button then hop on the next button. Still haven't decided if it should be an export, copy, favorite or etc. Need to draw up some diagrams and go from there. Peace!
