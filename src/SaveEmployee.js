@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { animations } from "./GSAPAnimations";
 import SavedEmployeeButtons from "./SavedEmployeeButtons";
 
 function SaveEmployee({ employees, updateEmployees }) {
+  //States
+  const [isContentEditable, setIsContentEditable] = useState(false);
+
   const handleDelete = (index) => {
     // Create a copy of the employees array and remove the item at the specified index
     const updatedEmployees = [...employees];
@@ -15,6 +19,12 @@ function SaveEmployee({ employees, updateEmployees }) {
     } else {
       console.log("# of employees:", updatedEmployees.length);
     }
+  };
+
+  const handleEdit = (index) => {
+    console.log(employees[index]);
+    const employeeToEdit = employees[index];
+    setIsContentEditable(true);
   };
 
   return (
@@ -40,25 +50,53 @@ function SaveEmployee({ employees, updateEmployees }) {
             >
               <SavedEmployeeButtons
                 onDelete={() => handleDelete(index)}
+                onEdit={() => handleEdit(index)}
                 animations={animations}
               />
-              <p>
-                <strong>Name:</strong> {element.name}
-                <br />
-                <strong>Role:</strong> {element.role}
-                <br />
-                <strong>Salary:</strong> {element.salary}
-                <br />
-                <strong>Work Model:</strong> {element.workModel}
-                <br />
-                <strong>Years of Experience:</strong> {element.yoe}
-                <br />
-                <strong>Favorite Office Supply:</strong>{" "}
-                {element.favoriteOfficeSupply}
-                <br />
-                <strong>Hobbies:</strong> {element.hobbies}
-                <br />
-              </p>
+              <div className="saved-employees">
+                <p>
+                  Name:{" "}
+                  <strong contentEditable={isContentEditable}>
+                    {element.name}
+                  </strong>
+                </p>
+                <p>
+                  Role:{" "}
+                  <strong contentEditable={isContentEditable}>
+                    {element.role}
+                  </strong>
+                </p>
+                <p>
+                  Salary:{" "}
+                  <strong contentEditable={isContentEditable}>
+                    {element.salary}
+                  </strong>
+                </p>
+                <p>
+                  Work Model:{" "}
+                  <strong contentEditable={isContentEditable}>
+                    {element.workModel}
+                  </strong>
+                </p>
+                <p>
+                  Years of Experience:{" "}
+                  <strong contentEditable={isContentEditable}>
+                    {element.yoe}
+                  </strong>
+                </p>
+                <p>
+                  Favorite Office Supply:{" "}
+                  <strong contentEditable={isContentEditable}>
+                    {element.favoriteOfficeSupply}
+                  </strong>
+                </p>
+                <p>
+                  Hobbies:
+                  <strong contentEditable={isContentEditable}>
+                    {element.hobbies}
+                  </strong>
+                </p>
+              </div>
             </div>
           );
         })}
