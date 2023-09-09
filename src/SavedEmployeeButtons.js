@@ -1,26 +1,25 @@
 import React from "react";
 import { animations } from "./GSAPAnimations";
 
-function SavedEmployeeButtons({ onDelete, onEdit }) {
+function SavedEmployeeButtons({ onDelete, onEdit, employee }) {
   const handleDeleteClick = () => {
     // Call the onDelete function passed from the parent component
     onDelete();
     // Call the animation functions as needed
-    const elementToAnimate = document.getElementById("employee-some-index"); // Replace with the appropriate element ID
-    if (elementToAnimate) {
-      fadeOut(elementToAnimate);
-    }
+    // const elementToAnimate = document.getElementById("employee-some-index"); // Replace with the appropriate element ID
+    // if (elementToAnimate) {
+    //   fadeOut(elementToAnimate);
+    // }
   };
 
   const handleEditClick = () => {
-    // Call the onDelete function passed from the parent component
-    // onDelete();
+    console.log(employee);
     onEdit();
 
     // Call the animation functions as needed
     const elementToAnimate = document.getElementById("employee-some-index"); // Replace with the appropriate element ID
     if (elementToAnimate) {
-      fadeOut(elementToAnimate);
+      animations.fadeOut(elementToAnimate);
     }
   };
 
