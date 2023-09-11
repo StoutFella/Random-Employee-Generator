@@ -1,14 +1,8 @@
-.editable {
-  border: 1px solid #007bff; /* Add styling for editable content */
-  background-color: #f5f5f5;
-  cursor: text;
-}
+/*   MEDIUM SCREEN   */
 
-.non-editable {
-  /* Add styling for non-editable content */
-  /* For example, you can define a different border color or background color */
-  border: 1px solid #ccc;
-  background-color: #fff;
+.editable {
+  background-color: gold;
+  box-shadow: 0 0 1.4em 0.4em gold;
 }
 
 .icons {
@@ -34,7 +28,6 @@ b {
 
 .App {
   display: flex;
-  width: 100%;
   font-family: sans-serif;
   text-align: start;
   background: rgb(110, 100, 145);
@@ -213,7 +206,7 @@ em {
 }
 
 .employees-data {
-  width: auto; /*change*/
+  width: auto;
 }
 
 .employees-data > p:active {
@@ -238,9 +231,7 @@ em {
 }
 
 .SavedEmployeeButtons > button:hover {
-  background: bisque;
-  color: black;
-  font-size: 1.1em;
+  border: 1px solid white;
 }
 
 .SavedEmployeeButtons > button:active {
@@ -298,7 +289,6 @@ em {
 
   .App {
     background: rgb(40, 40, 60);
-    width: 100%;
   }
 
   body {
@@ -385,11 +375,6 @@ em {
     background: rgb(65, 45, 65);
   }
 
-  body {
-    width: 100%;
-    margin: 0.4em auto;
-  }
-
   body,
   .child-wrapper {
     background: rgb(130, 55, 85);
@@ -398,13 +383,12 @@ em {
 
   .parent-wrapper {
     display: grid;
-    grid-template-columns: auto;    margin: 0.2em;
-
+    grid-template-columns: auto;
   }
 
   .child-wrapper {
     cursor: grabbing;
-    width: auto; /* Change me for the love of */
+    width: auto;
     max-width: 100%;
     margin: 0.2em;
   }

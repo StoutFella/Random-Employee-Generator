@@ -9,20 +9,28 @@ function SaveEmployee({ employees, updateEmployees }) {
   );
 
   const handleDelete = (index) => {
-    // Copy of employees array and removing the item at the specified index
     const updatedEmployees = [...employees];
     updatedEmployees.splice(index, 1);
-    // Update employees state using updateEmployees function
     updateEmployees(updatedEmployees);
   };
 
   const handleEdit = (index) => {
-    // Copy of edit state array
     const updatedIsContentEditable = [...isContentEditable];
     // Toggle edit state for clicked employee
     updatedIsContentEditable[index] = !updatedIsContentEditable[index];
     // Update state with modified array
     setIsContentEditable(updatedIsContentEditable);
+    // console.log("Employee:", employees[index]); //single employee
+    const editButton = document.querySelector(
+      `#employee-${index}`,
+      "saved-employees"
+    ).children[0].lastChild;
+    if (editButton) {
+      editButton.classList.toggle("editable");
+      editButton.textContent = updatedIsContentEditable[index]
+        ? "...editing"
+        : "Edit";
+    }
   };
 
   return (

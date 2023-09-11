@@ -33,7 +33,7 @@ P.S. The delete button removes the saved employee as a whole and not specific fi
 
 UPDATE: 9/07/2023
 
-1. Not sure if I should include the ***Edit*** button. It'll introduce state complexity and codebase is starting to give my eyes cancer. I think its a decent feature to have. For now, I'll shelf it as a nice to have feature.
+1. Not sure if I should include the **_Edit_** button. It'll introduce state complexity and codebase is starting to give my eyes cancer. I think its a decent feature to have. For now, I'll shelf it as a nice to have feature.
 
 2. Updated a little bit of the CSS. That's where I go to cry in the corner after dealing with react states.
 
@@ -43,8 +43,18 @@ UPDATE: 9/07/2023
 
 UPDATE: 9/08/2023
 
-1. Well I decided to keep the ***Edit*** button. Introduced the ***isContentEditable*** state which fills each employee with a default false value and when onClick of ***Edit*** button is triggered, it toggles back and forth b/w active & inactive states (thanks to the Logical NOT (!) operator instead of using a <em>true</em> value). Next step is to conditionally add a CSS class (.editable, .non-editable) based on the state value changes. However, this might be tricky since the HTML elements for the values may not support the style I'm visioning). I could give a style to the ***Edit*** button also (maybe a blinking light to show editing is on or something).
+1. Well I decided to keep the **_Edit_** button. Introduced the **_isContentEditable_** state which fills each employee with a default false value and when onClick of **_Edit_** button is triggered, it toggles back and forth b/w active & inactive states (thanks to the Logical NOT (!) operator instead of using a <em>true</em> value). Next step is to conditionally add a CSS class (.editable, .non-editable) based on the state value changes. However, this might be tricky since the HTML elements for the values may not support the style I'm visioning). I could give a style to the **_Edit_** button also (maybe a blinking light to show editing is on or something).
 
-2. CSS is also updated for the big screen. Need to fix up the :hover state of the buttons to reflect the same style look of the big screen for the medium and small screen media queries. Also need to fix the margin on .App or body (border isn't showing and looks funky).
+2. CSS is also updated for the big screen. Need to fix up the :hover state of the buttons to reflect the same style look of the big screen for the medium and small screen media queries. Also need to adjust the width of the child-element on the small screen. It's not going the full length of the screen but at max-content (the content is driving the width of the saved employees which is producing unflattering result). I want each saved employee to have an equal amount of width (content length shouldn't be the deciding factor).
+
+<hr>
+
+UPDATE: 9/10/2023
+
+1. Removed unnecessary functions <em>handleEditClick</em> and <em>handleDeleteClick</em> from SavedEmployeeButtons component.
+
+2. Added a CSS style for the edit **_.editable_** button. Might add more to the style or replace with GSAP style moving forward but its functional for now and helps with development (don't have to keep each field to see if the content is editable). Nice little time saving hack.
+
+3. Still need to target and add CSS to the editable fields. Also need to modify the return of **_SaveEmployee_** component.
 
 <hr>
