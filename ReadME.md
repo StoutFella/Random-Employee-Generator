@@ -58,3 +58,14 @@ UPDATE: 9/10/2023
 3. Still need to target and add CSS to the editable fields. Also need to modify the return of **_SaveEmployee_** component.
 
 <hr>
+
+UPDATE: 9/11/2023
+
+1. Added a <em>Nav component</em> and a <em>nav-style</em> page. Copied a quick design from Web. Authors credit in the file. In case this mini app gets bigger, I may need a couple of pages such as an "Employees", "Contact", "Homescreen w/ login", "FAQ" and etc. Thought I would do a quick nav page just to visualize how the webpage might looklike (current style is temporary). 
+
+2. Added an "edit" style for the saved employee data. May need to touch it up a bit but it's functional for now. <br>
+   However, there's a wordbreak and lineheight issues on small screen so I'll look into those. 
+
+3. I need to refactor components (well overdue) so I'll focus on that for next commit and stop hiding behind CSS and pointless commits.
+
+<hr>
