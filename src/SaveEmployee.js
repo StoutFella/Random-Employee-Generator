@@ -25,12 +25,21 @@ function SaveEmployee({ employees, updateEmployees }) {
       `#employee-${index}`,
       "saved-employees"
     ).children[0].lastChild;
+
+    const editValues = document
+      .querySelector(`#employee-${index}`)
+      .children[1].querySelectorAll("em");
+
     if (editButton) {
       editButton.classList.toggle("editable");
       editButton.textContent = updatedIsContentEditable[index]
         ? "...editing"
         : "Edit";
     }
+
+    editValues.forEach((element) => {
+      element.classList.toggle("edit");
+    });
   };
 
   return (
@@ -64,43 +73,43 @@ function SaveEmployee({ employees, updateEmployees }) {
                 <p>
                   Name:
                   <strong contentEditable={isContentEditable[index]} autofocus>
-                    {element.name}
+                    <em>{element.name}</em>
                   </strong>
                 </p>
                 <p>
                   Role:
                   <strong contentEditable={isContentEditable[index]}>
-                    {element.role}
+                    <em>{element.role}</em>
                   </strong>
                 </p>
                 <p>
                   Salary:
                   <strong contentEditable={isContentEditable[index]}>
-                    {element.salary}
+                    <em>{element.salary}</em>
                   </strong>
                 </p>
                 <p>
                   Work Model:
                   <strong contentEditable={isContentEditable[index]}>
-                    {element.workModel}
+                    <em>{element.workModel}</em>
                   </strong>
                 </p>
                 <p>
                   Years of Experience:
                   <strong contentEditable={isContentEditable[index]}>
-                    {element.yoe}
+                    <em>{element.yoe}</em>
                   </strong>
                 </p>
                 <p>
                   Favorite Office Supply:
                   <strong contentEditable={isContentEditable[index]}>
-                    {element.favoriteOfficeSupply}
+                    <em>{element.favoriteOfficeSupply}</em>
                   </strong>
                 </p>
                 <p>
                   Hobbies:
                   <strong contentEditable={isContentEditable[index]}>
-                    {element.hobbies}
+                    <em>{element.hobbies}</em>
                   </strong>
                 </p>
               </div>

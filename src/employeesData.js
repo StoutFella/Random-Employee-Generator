@@ -1,3 +1,5 @@
+//RAW - unformatted data (not massaged)
+
 export const employeesData = [
   {
     id: 1,
@@ -121,7 +123,7 @@ export const employeesData = [
     name: "Earl",
     role: "Fortune Cookie Consultant",
     salary: 0,
-    status: 'unknown', 
+    status: "unknown",
     workModel: "Remote",
     yoe: 10,
     active: true,
@@ -130,5 +132,3 @@ export const employeesData = [
     avatar: "../images/spongebob-characters-sheet-10.png"
   }
 ];
-
-// console.log(employeesData.length);

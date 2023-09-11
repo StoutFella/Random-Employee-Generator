@@ -1,8 +1,17 @@
-/*   MEDIUM SCREEN   */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Serif:ital@0;1&display=swap");
+
+.edit {
+  text-transform: capitalize;
+  font-style: normal;
+  border: 0.1em solid gold;
+  padding: 0.4em;
+  word-break: keep-all;
+  line-height: 2em;
+}
 
 .editable {
   background-color: gold;
-  box-shadow: 0 0 1.4em 0.4em gold;
+  animation: pulse-animation 3s infinite;
 }
 
 .icons {
@@ -31,6 +40,8 @@ b {
   font-family: sans-serif;
   text-align: start;
   background: rgb(110, 100, 145);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.95em;
 }
 
 body {
@@ -59,6 +70,8 @@ h1 {
   text-decoration: underline;
   text-underline-offset: 0.25em;
   font-size: 1.8em;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
 }
 
 strong {
@@ -162,15 +175,15 @@ em {
 }
 
 .saved-employees {
-  margin: 0.5em;
+  margin: 0.2em;
 }
 
 .saved-employees > p {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 0.1em solid rgba(255, 255, 255, 0.2);
   margin: 0.2em;
-  padding: 0.4em;
   font-weight: 600;
   color: white;
+  padding: 0.6em;
 }
 
 .saved-employees > p > strong {
@@ -206,7 +219,7 @@ em {
 }
 
 .employees-data {
-  width: auto;
+  width: auto; /*change*/
 }
 
 .employees-data > p:active {
@@ -382,15 +395,13 @@ em {
   }
 
   .parent-wrapper {
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
+    margin: 0 auto;
   }
 
   .child-wrapper {
+    width: 95%;
     cursor: grabbing;
-    width: auto;
-    max-width: 100%;
-    margin: 0.2em;
   }
 
   .child-wrapper > .saved-employees > p > strong {
@@ -423,4 +434,16 @@ em {
   When a button is clicked, card rotates to show more employee data :
   https://www.w3schools.com/howto/howto_css_flip_card.asp
   */
+}
+
+/*   KEYFRAME ANIMATIONS   */
+
+/* CREDIT: https://codepen.io/saigowthamr/pen/PowdZqy*/
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0em rgb(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 1em rgba(0, 0, 0, 0);
+  }
 }
