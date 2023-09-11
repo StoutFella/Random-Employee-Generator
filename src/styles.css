@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Serif:ital@0;1&display=swap");
+
+.edit {
+  text-transform: capitalize;
+  font-style: normal;
+  border: 0.1em solid gold;
+  padding: 0.4em;
+  word-break: keep-all;
+  line-height: 2em;
+}
+
+.editable {
+  background-color: gold;
+  animation: pulse-animation 3s infinite;
+}
+
 .icons {
   width: 3em;
 }
@@ -21,10 +37,11 @@ b {
 
 .App {
   display: flex;
-  width: 100%;
   font-family: sans-serif;
   text-align: start;
   background: rgb(110, 100, 145);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.95em;
 }
 
 body {
@@ -53,6 +70,8 @@ h1 {
   text-decoration: underline;
   text-underline-offset: 0.25em;
   font-size: 1.8em;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
 }
 
 strong {
@@ -144,7 +163,7 @@ em {
 }
 
 .employees-data > p:hover {
-  font-size: 1.1em;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .saved-employees-title {
@@ -156,25 +175,27 @@ em {
 }
 
 .saved-employees {
-  margin: 0.5em;
+  margin: 0.2em;
 }
 
 .saved-employees > p {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 0.1em solid rgba(255, 255, 255, 0.2);
   margin: 0.2em;
-  padding: 0.4em;
   font-weight: 600;
+  color: white;
+  padding: 0.6em;
 }
 
 .saved-employees > p > strong {
   font-weight: 300;
+  color: bisque;
   margin: 0.4em;
   padding: 0.4em;
 }
 
 .parent-wrapper {
   display: grid;
-  grid-template-columns: auto auto /*auto*/;
+  grid-template-columns: auto auto;
   gap: 1.4em;
   width: fit-content;
   margin: 1em;
@@ -188,17 +209,21 @@ em {
   width: 100%;
   border-radius: 0.4em;
   transition: all ease 0.5s;
-  background: rgb(140, 133, 160);
+  background: rgb(95, 90, 130);
 }
 
 .child-wrapper:hover {
+  background: rgb(75, 70, 100);
   outline: 1px solid white;
-  /* background: rgb(140, 133, 160); */
   transition: all ease 0.5s;
 }
 
+.employees-data {
+  width: auto; /*change*/
+}
+
 .employees-data > p:active {
-  color: white;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 #general-btns {
@@ -219,14 +244,12 @@ em {
 }
 
 .SavedEmployeeButtons > button:hover {
-  background: bisque;
-  color: black;
-  font-size: 1.1em;
+  border: 1px solid white;
 }
 
 .SavedEmployeeButtons > button:active {
-  background: rgb(65, 45, 65);
-  color: rgb(230, 105, 125);
+  background: rgb(75, 70, 100);
+  color: bisque;
 }
 
 .SavedEmployeeButtons {
@@ -248,16 +271,12 @@ em {
 
 @media screen and (min-width: 1080px) {
   .child-wrapper {
+    width: 100%;
     cursor: grabbing;
   }
 
   .child-wrapper > .saved-employees > p > strong {
     cursor: text;
-  }
-
-  .child-wrapper:hover {
-    background: rgb(80, 35, 50);
-    transition: background ease 0.5s;
   }
 
   strong {
@@ -283,7 +302,6 @@ em {
 
   .App {
     background: rgb(40, 40, 60);
-    width: 100%;
   }
 
   body {
@@ -313,7 +331,9 @@ em {
   }
 
   button:hover {
-    border: 1px solid rgb(230, 105, 125);
+    border: 1px solid bisque;
+    background: rgba(80, 80, 120, 0.3);
+    color: rgb(230, 105, 125);
   }
 
   button:active {
@@ -323,8 +343,7 @@ em {
   }
 
   .employees-data > p:active {
-    color: rgb(230, 105, 125);
-    background: rgb(130, 55, 85);
+    color: rgba(255, 255, 255, 0.2);
   }
 
   .SavedEmployeeButtons > button:hover {
@@ -361,12 +380,12 @@ em {
 
   .SavedEmployeeButtons > button:hover {
     background: rgb(130, 55, 85);
+    border: 1px solid rgb(230, 105, 125);
     color: white;
   }
 
   .App {
     background: rgb(65, 45, 65);
-    width: 100%;
   }
 
   body,
@@ -376,13 +395,12 @@ em {
   }
 
   .parent-wrapper {
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
     margin: 0 auto;
-    width: 100%;
   }
 
   .child-wrapper {
+    width: 95%;
     cursor: grabbing;
   }
 
@@ -391,7 +409,7 @@ em {
   }
 
   .child-wrapper:hover {
-    background: rgb(80, 35, 50);
+    background: rgba(130, 55, 85, 0.4);
     transition: background ease 0.5s;
   }
 
@@ -407,8 +425,7 @@ em {
   }
 
   .employees-data > p:active {
-    color: rgb(230, 105, 125);
-    background: rgb(130, 55, 85);
+    color: rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -417,4 +434,16 @@ em {
   When a button is clicked, card rotates to show more employee data :
   https://www.w3schools.com/howto/howto_css_flip_card.asp
   */
+}
+
+/*   KEYFRAME ANIMATIONS   */
+
+/* CREDIT: https://codepen.io/saigowthamr/pen/PowdZqy*/
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0em rgb(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 1em rgba(0, 0, 0, 0);
+  }
 }

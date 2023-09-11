@@ -1,3 +1,5 @@
+//RAW - unformatted data (not massaged)
+
 export const employeesData = [
   {
     id: 1,
@@ -89,7 +91,44 @@ export const employeesData = [
     favoriteOfficeSupply: "Pantone swatch book",
     hobbies: ["swimming", "baking", "decorating"],
     avatar: "../images/spongebob-characters-sheet-7.png"
+  },
+  {
+    id: 8,
+    name: "Shanaynay",
+    role: "Backup dancer",
+    salary: 35000,
+    status: "Part time (PT)",
+    workModel: "On-Site",
+    yoe: 8,
+    active: true,
+    favoriteOfficeSupply: "Wig",
+    hobbies: ["dancing", "doing makeup", "shopping"],
+    avatar: "../images/spongebob-characters-sheet-8.png"
+  },
+  {
+    id: 9,
+    name: "Mitch Van Buren",
+    role: "Solo Guitarist",
+    salary: 135000,
+    status: "Full time (FT)",
+    workModel: "Hybrid",
+    yoe: 11,
+    active: false,
+    favoriteOfficeSupply: "Gibson guitar",
+    hobbies: ["Rock 'n rolling", "Touring concerts", "visiting Guitar Center"],
+    avatar: "../images/spongebob-characters-sheet-9.png"
+  },
+  {
+    id: 10,
+    name: "Earl",
+    role: "Fortune Cookie Consultant",
+    salary: 0,
+    status: "unknown",
+    workModel: "Remote",
+    yoe: 10,
+    active: true,
+    favoriteOfficeSupply: "Girl Scout Cookies",
+    hobbies: ["Yoga", "ASMR", "Baking"],
+    avatar: "../images/spongebob-characters-sheet-10.png"
   }
 ];
-
-// console.log(employeesData.length);
